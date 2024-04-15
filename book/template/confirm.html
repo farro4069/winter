@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block main %}
+
+	<main>
+		<h1>Confirmation</h1>
+		<p>Thank you for registering</p>
+		<p>Please check your details and contact organiser if anything is not quite right.</p>
+		<div class='confirm'>
+			<p>Name: <span>{{ registered.name }}</span></p>
+			<p>Email: <span>{{ registered.email }}</span></p>
+			<p>Room type: <span>{{ room }}</span></p>
+			<p>Status: <span>{{ status }}</span></p>
+		</div>
+		<a href="{% url 'register' %}">
+			<button>Register another</button>
+		</a>
+	</main>
+
+{% endblock %}

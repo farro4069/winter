@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+	<link rel="shortcut icon" type="image/jpg" href="{% static 'assets/images/favicon_io/favicon.ico' %}"/>
+	<title>Lifecycle Winter Warmer</title>
+</head>
+<body>
+	<header>
+		<div class="nav__logo">
+			<img src="{% static 'assets/images/lifecycle-logo.png' %}">
+		</div>
+		<div class="hamburger__toggle">
+			<div class="hamburger"></div>
+		</div>
+		<ul class="nav__items">
+			<li class="nav__item"><a href="{% url 'home' %}"><p>Home</p></a></li>
+			<li class="nav__item"><a href="{% url 'register' %}">Register</a></li>
+			<li class="nav__item"><a href="#">Contact</a></li>
+			<li class="nav__item"><a href="/admin">Admin</a></li>
+
+		</ul>
+	
+	</header>
+
+	{% block main %}
+
+	{% endblock %}
+
+	<footer>
+		<img class='footer__logo' src="{% static 'assets/images/poor_giraffe.png' %}" alt='Poor Giraffe'>
+		<p>Poor Giraffe &copy; 2024</p>
+	</footer>
+
+</body>
+
+<script type="text/javascript" src="{% static 'menu.js' %}"></script>
+
+{% block script %}
+{% endblock %}
+
+</html>

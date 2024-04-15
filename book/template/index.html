@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main %}
+
+	<main>
+		<div class="picture__slider">
+			<div class="page__title">
+				<h1><span>6-7</span>July 2024</h1>
+			</div>
+		</div>
+		<div class="hero__section">
+			<div class="hero__card">
+				<h1>Lifecycle Winter Warmer</h1>
+				<p class='page__copy'>On Saturday, we'll ride up to Maleny and stay overnight overlooking the beautiful vista of the Glass House Mountains at Tranquil Park Resort.</p>
+				<p>After a buffet breakfast on Sunday morning we'll ride home along some meandering country roads before approaching the city. </p>
+				<p> A limited number of beds have been reserved so make sure you get in early.</p>
+			</div>
+			<div class="cta__card">
+				<h2>Join Lifecycle Cycling Club and the Wombles for a legendary weekend of riding and good cheer. </h2>
+				<p><span>$225</span></p>
+				<a href="{% url 'register' %}"><button>Register</button></a>
+			</div>
+		</div>
+		<div class="main__section">
+			<div class="main__card">
+				<ul><h2>What's included</h2>
+					<li>Baggage carriage</li>
+					<li>Riding support</li>
+					<li>Sag wagon</li>
+					<li>Morning tea at Mt Mee</li>
+					<li>Lunch stops</li>
+					<li>Shared platters on arrival</li>
+					<li>Twin share accommodation</li>
+					<li>Buffet breakfast</li>
+				</ul>
+			</div>
+			<div class="main__card">
+				<h2>Accommodation</h2>
+				<p>Tranquil Park is situated less than a kilometre from the heart of Maleny and overlooks the picturesque Something Valley across to the Glass House Mountains. </p>
+			</div>
+			<div class="main__card">
+				<h2>Volunteers</h2>
+				<p>This event is organised and supported by volunteers. </p>
+				<p>Volunteers may receive a discount on their accommodation. </p>
+				<p>If you or a family member would like to be a volunteer, please click. </p>
+				<a href="{% url 'volunteer' %}"><button>Volunteer</button></a>
+			</div>
+		</div>
+	</main>
+
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript" src="{% static 'script.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,282 @@
+.picture__slider {
+	position: relative;
+	width: 100vw;
+	height: 400px;
+	background-size: cover;
+	background-position: center;
+	z-index: 0;
+}
+
+.sliderOne {
+	position: absolute;
+	width: 100vw;
+	height: 400px;
+	background-size: cover;
+	background-position: center;
+	opacity: 1;
+	transition: opacity 1s;
+	z-index: 0;
+}
+
+
+.sliderTwo {
+	position: absolute;
+	width: 100vw;
+	height: 400px;
+	background-size: cover;
+	background-position: center;
+	opacity: 0;
+	transition: opacity 1s;
+	z-index: 0;
+}
+
+.hero__section {
+	font-family: HankenGrotesk;
+	font-weight: 300;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: 1rem;
+}
+
+
+.hero__card {
+	background: var(--clr-card);
+	border-radius: 0rem;
+	padding: 1rem;
+}
+
+.hero__card h1{
+	font-size: 3rem;
+	text-transform: uppercase;
+	color: var(--clr-white);
+}
+
+.hero__card h2{
+	font-size: 1.25rem;
+	font-weight: 200;
+	color: var(--clr-white);
+}
+
+.hero__card p {
+	font-size: 1rem;
+	color: var(--clr-black);
+}
+
+.cta__card {
+	background: var(--clr-card);
+	border-radius: 0rem;
+	padding: 1rem;
+}
+
+.cta__card h1{
+	font-size: 3rem;
+	text-transform: uppercase;
+	color: var(--clr-white);
+}
+
+.cta__card h2{
+	font-size: 1.25rem;
+	font-weight: 200;
+	text-align: center;
+	color: var(--clr-white);
+}
+
+.cta__card p {
+	font-size: 1rem;
+	color: var(--clr-black);
+	text-align: center;
+}
+
+.cta__card p span {
+	font-size: 4rem;
+	font-weight: 600;
+	color: var(--clr-green);
+}
+
+.cta__card p span:before {
+	content: 'from';
+	font-size: .75rem;
+	font-weight: 300;
+	color: var(--clr-black);
+}
+
+.cta__card p span:after {
+	content: 'per person';
+	font-size: .75rem;
+	font-weight: 300;
+	color: var(--clr-black);
+}
+
+
+.cta__card button {
+	width: 100%;
+	margin: 1rem 0 0 0;
+	padding: 5px 2rem;
+	border: none;
+	border-radius: 15px;
+	font-size: 1.5rem;
+	color: var(--clr-black);
+	background: var(--clr-green);
+	cursor: pointer;
+}
+
+.main__section {
+	font-family: HankenGrotesk;
+	font-weight: 300;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: 1rem;
+}
+
+
+.main__card {
+/*	background: var(--clr-card);*/
+	border-radius: 0rem;
+	padding: 1rem;
+}
+
+.main__card > ul {
+	list-style: none;
+}
+
+.main__card button {
+	width: 100%;
+	margin: 1rem 0 0 0;
+	padding: 5px 2rem;
+	border: none;
+	border-radius: 15px;
+	font-size: 1.5rem;
+	color: var(--clr-black);
+	background: var(--clr-green);
+	cursor: pointer;
+}
+
+.page__title {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	z-index: 1;
+	width: clamp(100px, 10vw, 200px);
+	aspect-ratio: 1/1;
+	border-radius: 50%;
+	background: var(--clr-green);
+	margin: 350px 0 0rem 80vw;
+	opacity: 0.7;
+}
+
+.page__title h1 {
+	width: 100%;
+	font-size: 1.2rem;
+	text-align: center;
+	color: var(--clr-black);
+	rotate: 9deg;
+}
+
+.page__title h1 span {
+	display: block;
+	font-size: 2rem;
+}
+
+
+.page__title .clip {
+	z-index: 1;
+
+	font-size: 3rem;
+	background-image: url('assets/images/tranquil-view.jpg');
+	background-position: top;
+	background-size: cover;
+	background-clip: text;
+	color: transparent;
+	color: var(--clr-white);
+	margin-top: 1rem;
+	margin-bottom: -6.5rem;
+	opacity: 0.8;
+}
+
+.instruction {
+	width: 440px;
+	margin: auto;
+}
+
+form {
+	width: 400px;
+}
+
+form p {
+	display: grid;
+	grid-template-columns: 140px 3fr;
+	margin-top: 1rem;
+}
+
+form label {
+	text-align: right;
+	font-size: 0.9rem;
+	padding: 6px;
+}
+
+form input {
+	padding: 5px;
+}
+
+form select {
+	padding: 5px;
+}
+
+form input[type="submit"] {
+	margin-top: 4rem;
+	width: 100%;
+	border: none;
+	border-radius: 15px;
+	font-size: 1.5rem;
+	color: var(--clr-black);
+	background: var(--clr-green);
+	cursor: pointer;
+}
+
+.confirm {
+	width: 400px;
+	background: var(--clr-white);
+	padding: 1rem 2rem;
+}
+
+.confirm p {
+	display: grid;
+	grid-template-columns: 140px 1fr;
+}
+
+.confirm p span {
+	font-size: 1.25rem;
+}
+
+button {
+	width: 100%;
+	margin: 1rem 0 0 0;
+	padding: 5px 2rem;
+	border: none;
+	border-radius: 15px;
+	font-size: 1.5rem;
+	color: var(--clr-black);
+	background: var(--clr-green);
+	cursor: pointer;
+}
+
+.error {
+	font-size: 2rem;
+	color: var(--clr-green);
+}
+
+
+@media (min-width: 400px) {
+
+	.hero__section {
+		grid-template-columns: 2fr 1fr;
+		grid-gap: 1rem;
+	}
+
+	.main__section {
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-gap: 1rem;
+	}
+}
