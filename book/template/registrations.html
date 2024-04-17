@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block main %}
+
+	<main>
+		<h1>Registrations</h1>
+		<p>Here's a list</p>
+		<div class="registrations">
+			<div class="header"><p>Name</p><p>Status</p><p>Room</p><p>Notes</p></div>
+			<ul>
+			{% for reg in registrations %}
+				<li><a href="{{ reg.id }}"><p>{{ reg.name }}</p><p>{{ reg.status }}</p><p>{{ reg.room }}</p><p>{{ reg.notes }}</p></a></li>
+			{% endfor %}
+			</ul>
+		</div>
+	</main>
+
+{% endblock %}
+
+{% block script %}
+
+<script type="text/javascript" src="{% static 'registrations.js' %}"></script>
+
+{% endblock %}

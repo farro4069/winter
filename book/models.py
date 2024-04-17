@@ -21,6 +21,7 @@ class Registration(models.Model):
 	email = models.EmailField()
 	status = models.ForeignKey(Status, on_delete=models.CASCADE)
 	room = models.ForeignKey(RoomType, on_delete=models.CASCADE)
+	notes = models.CharField(max_length=100, blank=True, null=True)
 
 	def __str__(self):
 		return self.name

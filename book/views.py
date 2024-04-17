@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from django.views import View
+from django.views.generic import View, UpdateView
 from .models import RoomType, Status, Registration
 from .forms import RegistrationForm
 
@@ -53,3 +53,23 @@ class VolunteerView(View):
 			
 		}
 		return render(request, 'volunteer.html', context)
+
+def registrations(request):
+	registrations = Registration.objects.all().order_by('name')
+	context = {
+		'registrations': registrations,
+	}
+	return render(request, 'registrations.html', context)
+
+def registration(request, pk):
+	registration = get_object_or_404(Registration, id = pk)
+	context = {
+		'registration': registration,
+	}
+	return render(request, 'registration.html', context)
+
+class RegistrationUpdateView(UpdateView):
+	model = Registration
+	template_name = "registration_update.html"
+	fields = ['name', 'email', 'status', 'room', 'notes']
+	success_url = '../'

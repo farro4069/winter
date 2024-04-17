@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block main %}
+
+	<main>
+		<h1>Registration details</h1>
+		<p>Here's the detail</p>
+		<div class='confirm'>
+			<p>Name: <span>{{ registration.name }}</span></p>
+			<p>Email: <span>{{ registration.email }}</span></p>
+			<p>Room type: <span>{{ registration.room }}</span></p>
+			<p>Status: <span>{{ registration.status }}</span></p>
+			<p>Notes: <span>{{ registration.notes }}</span></p>
+		</div>
+		<a href="{% url 'update' registration.id %}"><button>Update</button></a>
+	</main>
+
+{% endblock %}
+
+{% block script %}
+
+<script type="text/javascript" src="{% static 'registrations.js' %}"></script>
+
+{% endblock %}

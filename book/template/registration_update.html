@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block main %}
+
+	<main>
+		<h1>Update Registration details</h1>
+		<p>Check the detail and click Submit</p>
+		<div class='confirm'>
+			<p>Name: <span>{{ registration.name }}</span></p>
+		</div>
+
+		<form method="POST">
+			{% csrf_token %}
+			<p>
+				<label for="id_name">Full Name:</label>
+				<input type="text" name="name" maxlength="30" required="" id="id_name" value="{{ registration.name }}">
+
+			</p>
+			<p>
+				<label for="id_email">Email:</label>
+				<input type="email" name="email" maxlength="254" required="" id="id_email" value="{{ registration.email }}">
+			</p>
+			<p>
+				<label for="id_status">Status:</label>
+				<select name="status" required="" id="id_status">
+					<option value="{{ registration.status.id }}" selected>{{ registration.status }}</option>
+					  <option value="1">Rider</option>
+					  <option value="2">Volunteer</option>
+					  <option value="3">Non-rider</option>
+				</select>
+			</p>
+			<p>
+				<label for="id_room">Room preference:</label>
+				<select name="room" required="" id="id_room">
+					<option value="{{ registration.room.id }}" selected>{{ registration.room }}</option>
+				  <option value="1">Double</option>
+				  <option value="2">Sole occupancy</option>
+				  <option value="3">Twin share</option>
+				</select>
+			</p>
+
+			<p>
+				<label for="id_notes">Requests:</label>
+				<input type="text" name="notes" maxlength="30" required="" id="id_notes"value="{{ registration.notes }}">
+			</p>
+			<input type="submit" value="Update" name="">
+
+		</form>
+	</main>
+
+{% endblock %}
+
+{% block script %}
+
+<script type="text/javascript" src="{% static 'registrations.js' %}"></script>
+
+{% endblock %}

@@ -169,6 +169,7 @@
 .page__title h1 {
 	width: 100%;
 	font-size: 1.2rem;
+	text-transform: uppercase;
 	text-align: center;
 	color: var(--clr-black);
 	rotate: 9deg;
@@ -176,7 +177,7 @@
 
 .page__title h1 span {
 	display: block;
-	font-size: 2rem;
+	font-size: 2.5rem;
 }
 
 
@@ -266,6 +267,38 @@ button {
 	font-size: 2rem;
 	color: var(--clr-green);
 }
+
+.registrations {
+	width: 100%;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+}
+
+.registrations ul {
+	list-style: none;
+}
+
+.registrations .header,
+.registrations li a {
+	display: grid;
+	grid-template-columns: 3fr 2fr 3fr 5fr;
+	border: solid 1px var(--clr-white);
+	color: var(--clr-white);
+	background: var(--clr-blue);
+	padding: 3px 1rem;
+} 
+
+.registrations li a {
+	border: solid 1px var(--clr-white);
+	color: var(--clr-black);
+	background: var(--clr-white);
+} 
+
+.registrations li:nth-child(even) {
+	background: var(--clr-shadow);
+} 
+
 
 
 @media (min-width: 400px) {
