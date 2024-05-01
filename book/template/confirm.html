@@ -11,12 +11,16 @@
 		<div class='confirm'>
 			<p>Name: <span>{{ registered.name }}</span></p>
 			<p>Email: <span>{{ registered.email }}</span></p>
-			<p>Room type: <span>{{ room }}</span></p>
-			<p>Status: <span>{{ status }}</span></p>
+			<p>Membership: <span>{{ registered.membership }}</span></p>
+			<p>Room type: <span>{{ registered.room }}</span></p>
+			<p>Status: <span>{{ registered.status }}</span></p>
 			<p>Notes: <span>{{ registered.notes }}</span></p>
 		</div>
 		<a href="{% url 'register' %}">
 			<button>Register another</button>
+		</a>
+		<a href="{% url 'update' registered.id %}">
+			<button>Make corrections</button>
 		</a>
 	</main>
 

@@ -1,7 +1,7 @@
 .picture__slider {
 	position: relative;
 	width: 100vw;
-	height: 400px;
+	height: 300px;
 	background-size: cover;
 	background-position: center;
 	z-index: 0;
@@ -10,7 +10,7 @@
 .sliderOne {
 	position: absolute;
 	width: 100vw;
-	height: 400px;
+	height: 300px;
 	background-size: cover;
 	background-position: center;
 	opacity: 1;
@@ -22,7 +22,7 @@
 .sliderTwo {
 	position: absolute;
 	width: 100vw;
-	height: 400px;
+	height: 300px;
 	background-size: cover;
 	background-position: center;
 	opacity: 0;
@@ -45,13 +45,13 @@
 	padding: 1rem;
 }
 
-.hero__card h1{
-	font-size: 3rem;
+.hero__card h1 {
+	font-size: 2.5rem;
 	text-transform: uppercase;
 	color: var(--clr-white);
 }
 
-.hero__card h2{
+.hero__card h2 {
 	font-size: 1.25rem;
 	font-weight: 200;
 	color: var(--clr-white);
@@ -162,7 +162,7 @@
 	aspect-ratio: 1/1;
 	border-radius: 50%;
 	background: var(--clr-green);
-	margin: 350px 0 0rem 80vw;
+	margin: 250px 0 0rem 80vw;
 	opacity: 0.7;
 }
 
@@ -196,23 +196,37 @@
 	opacity: 0.8;
 }
 
+.sponsors {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: 4rem;
+	align-items: center;
+	justify-content: center;
+}
+
+.sponsors img {
+	max-height: 120px;
+	margin: 0 auto;
+}
+
+
 .instruction {
-	width: 440px;
+	width: clamp(360px, 95vw, 440px);
 	margin: auto;
 }
 
 form {
-	width: 400px;
+	width: clamp(360px, 95vw, 440px);
 }
 
 form p {
 	display: grid;
-	grid-template-columns: 140px 3fr;
+	grid-template-columns: 1fr;
 	margin-top: 1rem;
 }
 
 form label {
-	text-align: right;
+	text-align: left;
 	font-size: 0.9rem;
 	padding: 6px;
 }
@@ -224,6 +238,13 @@ form input {
 form select {
 	padding: 5px;
 }
+
+form input[type='checkbox'] {
+	height: 1.5rem;
+	width: 1.5rem;
+	margin-right: 100%;
+}
+
 
 form input[type="submit"] {
 	margin-top: 4rem;
@@ -237,14 +258,14 @@ form input[type="submit"] {
 }
 
 .confirm {
-	width: 400px;
+	width: clamp(360px, 95vw, 400px);
 	background: var(--clr-white);
-	padding: 1rem 2rem;
+	padding: 1rem;
 }
 
 .confirm p {
 	display: grid;
-	grid-template-columns: 140px 1fr;
+	grid-template-columns: 110px 1fr;
 }
 
 .confirm p span {
@@ -275,6 +296,11 @@ button {
 	flex-direction: column;
 }
 
+.registrations h2 {
+	font-size: 1.2rem;
+	margin-top: 6px;
+}
+
 .registrations ul {
 	list-style: none;
 }
@@ -282,7 +308,7 @@ button {
 .registrations .header,
 .registrations li a {
 	display: grid;
-	grid-template-columns: 3fr 2fr 3fr 5fr;
+	grid-template-columns: 4fr 1fr 2fr 5fr;
 	border: solid 1px var(--clr-white);
 	color: var(--clr-white);
 	background: var(--clr-blue);
@@ -299,9 +325,45 @@ button {
 	background: var(--clr-shadow);
 } 
 
+.brief {
+	max-width: 600px;
+	display: grid;
+	grid-gap: 0.5rem;
+	background: var(--clr-white);
+	padding: 1rem;
+}
 
+.brief li:before {
+	content: "🚴";
+	padding: 0 5px;
+}
 
-@media (min-width: 400px) {
+.two-columns {
+	display: grid;
+	grid-template-columns: 3fr 2fr;
+	grid-gap: 1rem;
+}
+
+.two-columns li {
+	font-size: 0.8rem;
+}
+
+.directions {
+	display: grid;
+	grid-template-columns: 8ch 1fr;
+}
+
+@media (min-width: 660px) {
+
+	.picture__slider,
+	.sliderOne,
+	.sliderTwo {
+		height: 400px;
+	}
+
+	.page__title {
+		margin: 350px 0 0rem 80vw;
+	}
 
 	.hero__section {
 		grid-template-columns: 2fr 1fr;
@@ -312,4 +374,23 @@ button {
 		grid-template-columns: 1fr 1fr 1fr;
 		grid-gap: 1rem;
 	}
+
+	.sponsors {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	form p {
+		grid-template-columns: 140px 1fr;
+
+	}
+
+	form label {
+		text-align: right;
+	}
+
+	form input[type='checkbox'] {
+		margin: 0 0 0 100%;
+	}
+
+
 }

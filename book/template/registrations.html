@@ -6,15 +6,38 @@
 
 	<main>
 		<h1>Registrations</h1>
-		<p>Here's a list</p>
+
 		<div class="registrations">
-			<div class="header"><p>Name</p><p>Status</p><p>Room</p><p>Notes</p></div>
+			<h2>Riders</h2>
+			<div class="header"><p>Name</p><p>Mem</p><p>Room</p><p>Notes</p></div>
 			<ul>
 			{% for reg in registrations %}
-				<li><a href="{{ reg.id }}"><p>{{ reg.name }}</p><p>{{ reg.status }}</p><p>{{ reg.room }}</p><p>{{ reg.notes }}</p></a></li>
+				{% if reg.status.id == 1 %}
+					<li><a href="{{ reg.id }}"><p>{{ reg.name }}</p><p>{{ reg.membership.id }}</p><p>{{ reg.room }}</p><p>{{ reg.notes }}</p></a></li>
+				{% endif %}
 			{% endfor %}
 			</ul>
+			<h2>Volunteers</h2>
+			<div class="header"><p>Name</p><p>Mem</p><p>Room</p><p>Notes</p></div>
+			<ul>
+			{% for reg in registrations %}
+				{% if reg.status.id == 2 %}
+					<li><a href="{{ reg.id }}"><p>{{ reg.name }}</p><p>{{ reg.membership.id }}</p><p>{{ reg.room }}</p><p>{{ reg.notes }}</p></a></li>
+				{% endif %}
+			{% endfor %}
+			</ul>
+			<h2>Non-riders</h2>
+			<div class="header"><p>Name</p><p>Mem</p><p>Room</p><p>Notes</p></div>
+			<ul>
+			{% for reg in registrations %}
+				{% if reg.status.id == 3 %}
+					<li><a href="{{ reg.id }}"><p>{{ reg.name }}</p><p>{{ reg.membership.id }}</p><p>{{ reg.room }}</p><p>{{ reg.notes }}</p></a></li>
+				{% endif %}
+			{% endfor %}
+			</ul>
+
 		</div>
+
 	</main>
 
 {% endblock %}

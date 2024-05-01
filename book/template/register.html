@@ -30,17 +30,32 @@
 				</select>
 			</p>
 			<p>
+				<label for="id_membership">Membership:</label>
+				<select name="membership" required="" id="id_membership">
+					  <option value="1" selected>AusCycling (prefered)</option>
+					  <option value="2">Bicycle Queensland</option>
+					  <option value="3">Neither (Non-riders only)</option>
+				</select>
+				
+			</p>
+			<p>
 				<label for="id_room">Room preference:</label>
 				<select name="room" required="" id="id_room">
 				  <option value="1">Double</option>
-				  <option value="2">Sole occupancy</option>
+				  <option value="2">Sole occupancy (add $100)</option>
 				  <option value="3" selected >Twin share</option>
+				  <option value="4">No accommodation</option>
 				</select>
 			</p>
 
 			<p>
 				<label for="id_notes">Requests:</label>
 				<input type="text" name="notes" maxlength="30" required="" id="id_notes "value={{ details.notes }}>
+			</p>
+			<p>
+				<input type="checkbox" name="acknowledge" required>
+				<label for="id_acknowledge">I have read and agree to the <a href="{% url 'important' %}">
+important information.</a></label>
 			</p>
 			<input type="submit" value="Register" name="">
 		</form>

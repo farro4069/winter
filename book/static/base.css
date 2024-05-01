@@ -8,7 +8,7 @@
 :root {
 	--clr-background: linear-gradient(hsl(200, 58%, 50%, 0.9), hsl(210, 58%, 20%, 0.8));
 	--clr-card: hsl(200, 60%, 55%, 0.9);
-	--clr-nav: hsl(208, 60%, 40%, 0.8);
+	--clr-nav: hsl(208, 60%, 40%, 0.9);
 	--clr-green: hsl(90, 50%, 50%);
 	--clr-red: hsl(0, 90%, 50%);
 	--clr-blue: hsl(208, 90%, 45%, 0.9);
@@ -36,7 +36,7 @@ a {
 }
 
 html {
-	font-size: 16px;
+	font-size: clamp(14px, 2vw, 16px);
 }
 
 
@@ -85,12 +85,17 @@ footer {
 
 h1 {
 	color: var(--clr-white);
+	margin-top: 0.5rem;
+}
+
+ul {
+	list-style: none;
 }
 
 .nav__logo img {
 	position: absolute;
 	margin: 1rem 0 0 2rem;
-	height: 150%;
+	height: 110%;
 	object-fit: cover;
 	z-index: 10;
 }
@@ -157,7 +162,6 @@ h1 {
 	justify-content: center;
 	align-items: center;
 	list-style: none;
-	width: 30vw;
 	height: 0px;
 	overflow: hidden;
 	transition: all 2s ease;
@@ -168,8 +172,8 @@ h1 {
 	height: fit-content;
 }
 
+
 .nav__item {
-	padding: 1rem 5rem;
 	width: 100%;
 	text-align: center;
 	background: var(--clr-nav);
@@ -177,10 +181,20 @@ h1 {
 }
 
 .nav__item:hover {
-	opacity: 0.8;
+	background: var(--clr-blue);
 }
 
-@media (min-width: 400px) {
+.nav__item p {
+	width: 100%;
+	padding: 1rem 5rem;
+}
+
+
+@media (min-width: 660px) {
+
+	body {
+		font-size: 16px;
+	}
 
 	main {
 		width: clamp(400px, 90vw, 812px);
@@ -191,6 +205,10 @@ h1 {
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+	}
+
+	.nav__logo img {
+		height: 150%;
 	}
 
 }

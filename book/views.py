@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import View, UpdateView
-from .models import RoomType, Status, Registration
+from .models import Membership, RoomType, Status, Registration
 from .forms import RegistrationForm
 
 def index(request):
@@ -23,13 +23,9 @@ class RegisterView(View):
 			booking = register.save(commit = False)
 			booking.save() 
 
-			registered = request.POST
-			room = get_object_or_404(RoomType, id=registered['room'])
-			status = get_object_or_404(Status, id=registered['status'])
+			registered = Registration.objects.latest('id')
 
 			context = {
-				'room': room,
-				'status': status,
 				'registered': registered,
 			}
 			return render(request, 'confirm.html', context)
@@ -68,8 +64,16 @@ def registration(request, pk):
 	}
 	return render(request, 'registration.html', context)
 
+def important(request):
+	context = {}
+	return render(request, 'important.html', context)
+
+def route(request):
+	context = {}
+	return render(request, 'route.html', context)
+
 class RegistrationUpdateView(UpdateView):
 	model = Registration
 	template_name = "registration_update.html"
-	fields = ['name', 'email', 'status', 'room', 'notes']
+	fields = ['name', 'email', 'membership', 'status', 'room', 'notes']
 	success_url = '../'

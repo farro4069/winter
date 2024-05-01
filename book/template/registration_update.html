@@ -6,7 +6,7 @@
 
 	<main>
 		<h1>Update Registration details</h1>
-		<p>Check the detail and click Submit</p>
+		<p>Check the detail and click 'Update'</p>
 		<div class='confirm'>
 			<p>Name: <span>{{ registration.name }}</span></p>
 		</div>
@@ -21,6 +21,15 @@
 			<p>
 				<label for="id_email">Email:</label>
 				<input type="email" name="email" maxlength="254" required="" id="id_email" value="{{ registration.email }}">
+			</p>
+			<p>
+				<label for="id_memberhip">Membership:</label>
+				<select name="membership" required="" id="id_membership">
+					<option value="{{ registration.membership.id }}" selected>{{ registration.membership }}</option>
+					  <option value="1">AusCycling</option>
+					  <option value="2">Bicycle Qeensland</option>
+					  <option value="3">Neither</option>
+				</select>
 			</p>
 			<p>
 				<label for="id_status">Status:</label>

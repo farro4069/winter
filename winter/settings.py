@@ -14,7 +14,9 @@ SECRET_KEY = 'django-insecure-92xybd_nynwvtv-1$+aq*e=lu26hjlg&fsmh(^**h79&j-mc0&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [winterwarmer.pythonanywhere.com]
+
+
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -109,7 +111,7 @@ STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'), 
-    '/winter/book/static/',
+    '/book/static/',
 ]
 
 MEDIA_URL = '/media/'

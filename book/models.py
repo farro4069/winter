@@ -14,11 +14,16 @@ class Status(models.Model):
 	def __str__(self):
 		return self.status
 
+class Membership(models.Model):
+	membership = models.CharField(max_length=30)
 
+	def __str__(self):
+		return self.membership
 
 class Registration(models.Model):
 	name = models.CharField(max_length=30)
 	email = models.EmailField()
+	membership = models.ForeignKey(Membership, on_delete=models.CASCADE, null=True)
 	status = models.ForeignKey(Status, on_delete=models.CASCADE)
 	room = models.ForeignKey(RoomType, on_delete=models.CASCADE)
 	notes = models.CharField(max_length=100, blank=True, null=True)
