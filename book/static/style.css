@@ -389,7 +389,7 @@ button {
 	}
 
 	form input[type='checkbox'] {
-		margin: 0 0 0 100%;
+		margin-left: calc(100% - 2rem);
 	}
 
 
