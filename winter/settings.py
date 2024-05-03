@@ -15,7 +15,7 @@ SECRET_KEY = 'django-insecure-92xybd_nynwvtv-1$+aq*e=lu26hjlg&fsmh(^**h79&j-mc0&
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['https://winterwarmer.pythonanywhere.com', '127.0.0.1' ]
+ALLOWED_HOSTS = ['winterwarmer.pythonanywhere.com', '127.0.0.1' ]
 
 # ALLOWED_HOSTS = []
 
