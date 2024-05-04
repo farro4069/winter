@@ -1,10 +1,16 @@
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import View, UpdateView
-from .models import Membership, RoomType, Status, Registration
+from .models import Membership, RoomType, Status, Registration, Price
 from .forms import RegistrationForm
 
 def index(request):
-	return render(request, 'index.html')
+	price = get_object_or_404(Price, item='Room')
+
+	context = {
+		'price': price,
+	}
+
+	return render(request, 'index.html', context)
 
 
 class RegisterView(View):
