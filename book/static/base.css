@@ -53,7 +53,7 @@ header {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	height: 5rem;
+	height: 8rem;
 	background: var(--clr-nav);
 }
 
@@ -95,7 +95,8 @@ ul {
 .nav__logo img {
 	position: absolute;
 	margin: 1rem 0 0 2rem;
-	height: 110%;
+	max-width: 70vw;
+	max-height: 80%;
 	object-fit: cover;
 	z-index: 10;
 }
@@ -208,7 +209,6 @@ ul {
 	}
 
 	.nav__logo img {
-		height: 150%;
 	}
 
 }
