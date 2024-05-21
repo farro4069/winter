@@ -50,11 +50,11 @@
 
 			<p>
 				<label for="id_notes">Requests:</label>
-				<input type="text" name="notes" maxlength="100" required="" id="id_notes "value={{ details.notes }}>
+				<input type="text" name="notes" maxlength="100" id="id_notes "value={{ details.notes }}>
 			</p>
 			<p>
 				<input type="checkbox" name="acknowledge" required>
-				<label for="id_acknowledge">I have read and agree to the <a href="{% url 'important' %}">
+				<label for="id_acknowledge">I have read and agree to the <a href="{% url 'important' %}" target="_blank">
 important information.</a></label>
 			</p>
 			<input type="submit" value="Register" name="">

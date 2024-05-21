@@ -12,7 +12,9 @@
 <body>
 	<header>
 		<div class="nav__logo">
-			<img src="{% static 'assets/images/lc-logo-white.png' %}">
+			<a href="{% url 'home' %}">
+				<img src="{% static 'assets/images/lc-logo-white.png' %}">
+			</a>
 		</div>
 		<div class="hamburger__toggle">
 			<div class="hamburger"></div>
