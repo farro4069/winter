@@ -325,6 +325,30 @@ button {
 	background: var(--clr-shadow);
 } 
 
+.detail ul {
+	list-style: none;	
+}
+
+
+.detail .header,
+.detail li {
+	display: grid;
+	grid-template-columns: 1fr 4fr 6fr 1fr 1fr;
+	border: solid 1px var(--clr-white);
+	color: var(--clr-white);
+	background: var(--clr-blue);
+	padding: 3px 1rem;
+}
+
+.detail li {
+	color: var(--clr-black);
+	background: var(--clr-white);
+}
+
+.detail li:nth-child(even) {
+	background: var(--clr-shadow);
+}
+
 .brief {
 	max-width: 600px;
 	display: grid;

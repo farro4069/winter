@@ -70,6 +70,13 @@ def registration(request, pk):
 	}
 	return render(request, 'registration.html', context)
 
+def detailedregistrations(request):
+	registrations = Registration.objects.all().order_by('id')
+	context = {
+		'registrations': registrations,
+	}
+	return render(request, 'detailedregistrations.html', context)
+
 def important(request):
 	context = {}
 	return render(request, 'important.html', context)
