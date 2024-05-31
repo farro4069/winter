@@ -13,7 +13,7 @@
 			<ul>
 			{% for reg in registrations %}
 				{% if reg.status.id == 1 %}
-					<li><a href="{{ reg.id }}"><p>{{ reg.name }}</p><p>{{ reg.membership.id }}</p><p>{{ reg.room }}</p><p>{{ reg.notes }}</p></a></li>
+					<li><a href="{{ reg.id }}"><p>{{ reg.name }}</p><p>{{ reg.membership.code }}</p><p>{{ reg.room }}</p><p>{{ reg.notes }}</p></a></li>
 				{% endif %}
 			{% endfor %}
 			</ul>
@@ -22,7 +22,7 @@
 			<ul>
 			{% for reg in registrations %}
 				{% if reg.status.id == 2 %}
-					<li><a href="{{ reg.id }}"><p>{{ reg.name }}</p><p>{{ reg.membership.id }}</p><p>{{ reg.room }}</p><p>{{ reg.notes }}</p></a></li>
+					<li><a href="{{ reg.id }}"><p>{{ reg.name }}</p><p>{{ reg.membership.code }}</p><p>{{ reg.room }}</p><p>{{ reg.notes }}</p></a></li>
 				{% endif %}
 			{% endfor %}
 			</ul>
@@ -31,7 +31,7 @@
 			<ul>
 			{% for reg in registrations %}
 				{% if reg.status.id == 3 %}
-					<li><a href="{{ reg.id }}"><p>{{ reg.name }}</p><p>{{ reg.membership.id }}</p><p>{{ reg.room }}</p><p>{{ reg.notes }}</p></a></li>
+					<li><a href="{{ reg.id }}"><p>{{ reg.name }}</p><p>{{ reg.membership.code }}</p><p>{{ reg.room }}</p><p>{{ reg.notes }}</p></a></li>
 				{% endif %}
 			{% endfor %}
 			</ul>

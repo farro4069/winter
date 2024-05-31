@@ -16,6 +16,7 @@ class Status(models.Model):
 
 class Membership(models.Model):
 	membership = models.CharField(max_length=30)
+	code = models.CharField(max_length=3)
 
 	def __str__(self):
 		return self.membership
