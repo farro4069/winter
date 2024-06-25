@@ -5,8 +5,9 @@
 {% block main %}
 
 	<main>
-		<h1>Reserve your place</h1>
-		<p class="instruction">Please complete the details below to reserve your spot on the Lifecycle Winter Warmer. Separate registration is required for each person, whether riding or not. </p>
+		<h1>Add me to the Standy-By list</h1>
+		<p class="instruction">Reserved accommodation is now sold out. You can add your name to the list and the organisers will endeavour to find a place for you in the event of a cancellation or other accommodation becoming available. 
+		Separate registration is required for each person, whether riding or not. </p>
 
 		<p class='error'>{{ message }}</p>
 		
@@ -57,7 +58,7 @@
 				<label for="id_acknowledge">I have read and agree to the <a href="{% url 'important' %}" target="_blank">
 important information.</a></label>
 			</p>
-			<input type="submit" value="Register" name="">
+			<input type="submit" value="Add to Stand-By list" name="">
 		</form>
 
 	</main>
