@@ -1,0 +1,53 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body style="margin:0;">
+	<p>Dear {{ registered.name|truncatewords:1|cut:'…' }}</p>
+	<p>Thank you for registering for the 2025 Lifecycle Winter Warmer. To confirm your place on the ride, and your accommodation requirements, please transfer the full registration amount immediately. Details are outlined below.</p>
+	<p>Please confirm your payment by emailing the transfer receipt to winter.maleny@gmail.com</p>
+	<p>Any enquiries are best directed to this email address and stay tuned for more information as the weekend approaches.</p>
+
+	<p style='margin:20px 0 0 0;'>Kind regards</p>
+	<p style='margin:0;'>The Winter Warmer team.</p>
+	<br>
+	<div style="margin: 0;color:#010101;background:#f0f0f0;padding:2rem;font-size:1.25rem;">
+		<h1 style="margin: 0;">Lifecycle Cycling Club, Inc</h1>
+		<h2>Invoice</h2>
+		<p style="display:inline-block; margin:20px 0 0 0; width:15ch;">Contact: </p><span style="margin-left:30px;font-style: italic;">winter.maleny@gmail.com</span><br>
+		<p style="display:inline-block; margin:0px 0 0 0; width: 15ch;">Date:</p><span style="margin-left:30px">{{ registered.regdate|date:'d F Y' }}</span><br>
+		<p style="display:inline-block; margin:0px 0 0 0; width: 15ch;">Invoice number:</p><span style="margin-left:30px;font-weight: 600;">WW{{ registered.id }}</span><br>
+		<p style="display:inline-block; margin:20px 0 0 0; width: 15ch;">Name: </p><span style="margin-left:30px;font-weight: 600;">{{ registered.name }}</span><br>
+
+		<p style="display:inline-block; margin:20px 0 0 0; width: 15ch;">Event: </p><span style="margin-left:30px;">2025 Winter Warmer, 26-27 July</span><br>
+		<p style="display:inline-block; margin:0px 0 0 0; width: 15ch;">Status: </p><span style="margin-left:30px;">{{ registered.status }}</span><br>
+		<p style="display:inline-block; margin:0px 0 0 0; width: 15ch;">Room type: </p><span style="margin-left:30px;">{{ registered.room }}</span><br>
+		<p style="display:inline-block; margin:0px 0 0 0; width: 15ch;">Details: </p><span style="margin-left:30px;">{{ registered.room.includes }}</span><br>
+		<p style="display:inline-block; margin:20px 0 0 0; width: 15ch;">TOTAL COST: </p><span style="margin-left:30px;font-weight: 600;">$
+			{% if registered.status.id == 3 %}
+				{{ registered.room.amount|add:'-40'|floatformat:'2g' }}
+			{% else %}
+				{{ registered.room.amount|floatformat:'2g' }}
+			{% endif %}
+		</span><br>
+		
+		{% if registered.status.id == 2 %}
+			<p>Note: Before paying this, talk to the organisers regarding the role you can provide and a possible discount on your accommodation costs. </p>
+			{% endif%}
+		<br>
+		<h3>Payment method.</h3>
+		<p style="display:inline-block; width: 15ch; margin:0;">Account name:</p><span style="margin-left:30px;font-weight: 600;">Lifecycle Cycling Club</span><br>
+		<p style="display:inline-block; width: 15ch; margin:0;">BSB:</p><span style="margin-left:30px;font-weight: 600;">484799</span><br>
+		<p style="display:inline-block; width: 15ch; margin:0;">Account number:</p><span style="margin-left:30px;font-weight: 600;">47848412</span><br>
+		<p style="display:inline-block; width: 15ch; margin:0;">Reference:</p><span style="margin-left:30px;font-weight: 600;">WW{{ registered.id }}</span><br>
+		<p style="display:inline-block; width: 15ch;">Please pay before: </p><span style="margin-left:30px;font-weight: 600;">19 July 2025</span><br>
+		<p>E&OE</p>
+	</div>
+</body>
+</html>
+

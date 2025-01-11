@@ -7,36 +7,41 @@
 	<main>
 		<h1>Important information</h1>
 		<div class="brief">
-		<h2>Stand-By List</h2>
-		<p>The organisers will try to source accommodation for you but there are no guarantees. Space may become available due to cancellations from the group or from other reservations at Tranquil Park.</p>
-		<p>If you want to be added to the list, please register and pay. Payments are required (must be received) by Friday 28 June.</p>
-		<p>If the organisers are unable to secure your spot, a full refund will be made.</p>
 		<h2>Insurance</h2>
 		<p>It's important that you acknowledge that you ride at your own risk. You should be aware of what is covered by the insurance included in your AusCycling or Bicycle Queensland membership. You may wish to take out additional insurance. You are advised to seek your own independent advice.</p>
 
-		<ul><h2>Personal costs not included</h2>
-			<li>Snacks, gels, power bars.</li>
-			<li>Lunch on Saturday at Woodford.</li>
-			<li>Refreshments on Saturday evening.</li>
-			<li>Dinner Saturday night.</li>
-			<li>Barista coffees Sunday morning.</li>
-			<li>Morning tea at Wamurran.</li>
+		<h2>Personal costs not included</h2>
+		<ul>
+			{% for excluded in inclusions %}
+				<li>{{ excluded.item }}.</li>
+			{% endfor %}
 		</ul>
+
 		<h2>Don't want to ride</h2>
 		<p>No problem. If you would like to book accommodation, you will need to register and choose the "Non-rider" option from the Status panel. </p>
+
 		<h2>Don't need accommodation</h2>
-		<p>Simple. Please register and choose "no accommodation" from the drop down. To cover the incidental costs of providing support vehicles, volunteers and morning tea, you'll be required to pay just $40 for the riding components only - No accommodation and no Sunday morning breakfast. </p>
+		<p>Simple. Please register and choose "no accommodation" from the drop down. To cover the incidental costs of providing support vehicles, volunteers and morning tea, you'll be required to pay just ${{ ride.amount|floatformat:'0g' }} for the riding components only - No accommodation and no Sunday morning breakfast. </p>
+
 		<h2>What to pack</h2>
 		<p>Pack a small backpack that you can carry to the assembly point and return.</p>
 		<p>You will need toiletries, a change of riding kit, and clothes for Saturday evening. It may be cool so a light-weight (polly fleece or similar) jumper.</p>
 		<p>A charger for your phone, lights and cycle computer.</p>
 		<p>Don't forget to carry at least two spare tubes with you on the bike. </p>
+
 		<h2>Dinner Saturday</h2>
-		<p>Unfortunately, the restaurant has been booked out for a wedding on Saturday night. A reservation has been made nearby at King Ludwig's German Restaurant and Bavarian Beer Bar (less than a kilometre away) with no obligation. You are free to explore other options in Maleny and elsewhere.</p>
+		<p>The accommodation package includes dinner onsite in the restaurant area on Saturday evening. While you are free to explore other dining options in Maleny and elsewhere, the package cost is the same regardless - no discount if you skip dinner. Your bar tab is your own affair. </p>
+
 		<h2>How to pay</h2>
-		<p>After you have registered you will receive an invoice by email. Details on payment options will be outlined with the invoice. This must be paid in full by 21 June.</p>
+		<p>After you have registered you will receive an invoice by email from Lifecycle Cycling Club. Details on payment options will be outlined with the invoice. This must be paid in full by Friday 11 July.</p>
 		<h2>Cancellation policy</h2>
 		<p>The ride will go ahead in light rain. It the forecast is dreadful a week out the organisers will attempt to cancel accommodation. Whatever costs are returned will be distributed to particpants equitably. There is a chance that you will not receive a full refund. </p>
+
+		<h2>Late registration</h2>
+		<p>The organisers will try to source accommodation for you but there are no guarantees. Space may become available due to cancellations from the group or from other reservations at Tranquil Park.</p>
+		<p>A stand-by list might be considered at the discretion of the organisers. If you want to be added to the list, please register and pay. Payments are required (must be received) by Friday 11 July.</p>
+		<p>If the organisers are unable to secure your spot, a full refund will be made.</p>
+
 		<h2>Contact</h2>
 		<p>Please direct any further questions or contact to <a href="mailto:winter.maleny@gmail.com">winter.maleny@gmail.com</a> </p>
 		</div>

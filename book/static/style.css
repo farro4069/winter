@@ -153,6 +153,8 @@
 
 .page__title {
 	position: absolute;
+	bottom: 0;
+	right: 0;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -162,7 +164,7 @@
 	aspect-ratio: 1/1;
 	border-radius: 50%;
 	background: var(--clr-green);
-	margin: 250px 0 0rem 80vw;
+/*	margin: 250px 0 0rem 80vw;*/
 	opacity: 0.7;
 }
 
@@ -177,7 +179,7 @@
 
 .page__title h1 span {
 	display: block;
-	font-size: 2.5rem;
+	font-size: 2.25rem;
 }
 
 
@@ -386,7 +388,7 @@ button {
 	}
 
 	.page__title {
-		margin: 350px 0 0rem 80vw;
+		left: calc(100vw - 180px);
 	}
 
 	.hero__section {
@@ -415,6 +417,8 @@ button {
 	form input[type='checkbox'] {
 		margin-left: calc(100% - 2rem);
 	}
+}
 
-
+#book:active {
+	opacity: 0.8;
 }

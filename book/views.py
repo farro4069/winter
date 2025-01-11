@@ -1,13 +1,23 @@
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import View, UpdateView
-from .models import Membership, RoomType, Status, Registration, Price
+from .models import Membership, RoomType, Status, Registration, Price, Inclusion
 from .forms import RegistrationForm
+from django.core.mail import send_mail, EmailMultiAlternatives
+from django.template.loader import render_to_string
+from django.utils.html import strip_tags
+from django.conf import settings
 
 def index(request):
-	price = get_object_or_404(Price, item='Room')
+	sharing = get_object_or_404(Price, item='Sharing')
+	ride = get_object_or_404(Price, item='Ride only')
+	auscycling = get_object_or_404(Price, item='AusCycling')
+	inclusions = Inclusion.objects.filter(included = True)
 
 	context = {
-		'price': price,
+		'sharing': sharing,
+		'ride': ride,
+		'auscycling': auscycling,
+		'inclusions': inclusions,
 	}
 
 	return render(request, 'index.html', context)
@@ -30,10 +40,24 @@ class RegisterView(View):
 			booking.save() 
 
 			registered = Registration.objects.latest('id')
-
+			rooms = RoomType.objects.all()
 			context = {
 				'registered': registered,
+				'rooms': rooms,
 			}
+
+			invoice_html = render_to_string('invoice.html', context)
+			invoice_plain = strip_tags(invoice_html)
+
+			msg = EmailMultiAlternatives(
+				'Winter Warmer Registration',
+				invoice_plain,
+				settings.EMAIL_HOST_USER,
+				[registered.email],
+			)
+			msg.attach_alternative(invoice_html, "text/html")
+			msg.send()
+
 			return render(request, 'confirm.html', context)
 
 		else:
@@ -78,7 +102,13 @@ def detailedregistrations(request):
 	return render(request, 'detailedregistrations.html', context)
 
 def important(request):
-	context = {}
+	inclusions = Inclusion.objects.filter(included = False)
+	ride = get_object_or_404(Price, item='Ride only')
+
+	context = {
+		'inclusions': inclusions,
+		'ride': ride,
+	}
 	return render(request, 'important.html', context)
 
 def route(request):

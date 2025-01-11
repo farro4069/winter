@@ -5,11 +5,9 @@
 {% block main %}
 
 	<main>
-		<h1>Register here</h1>
-		<div class="instruction">
-			<p>A limited number of rooms have been reserved. To assist organisers and to avoid disappointment it is recomended that you book early.</p>
-			<p>Separate registrations are required for each person, whether riding or not. </p>
-		</div>
+		<h1>Add me to the Standy-By list</h1>
+		<p class="instruction">Reserved accommodation is now sold out. You can add your name to the list and the organisers will endeavour to find a place for you in the event of a cancellation or other accommodation becoming available. 
+		Separate registration is required for each person, whether riding or not. </p>
 
 		<p class='error'>{{ message }}</p>
 		
@@ -57,16 +55,12 @@
 			</p>
 			<p>
 				<input type="checkbox" name="acknowledge" required>
-				<label for="id_acknowledge">I have read and agree to the <a href="{% url 'important' %}" target="_blank">important information.</a></label>
+				<label for="id_acknowledge">I have read and agree to the <a href="{% url 'important' %}" target="_blank">
+important information.</a></label>
 			</p>
-			<input id="book" type="submit" value="Register me" name="">
+			<input type="submit" value="Add to Stand-By list" name="">
 		</form>
 
 	</main>
 
 {% endblock %}
-
-{% block script %}
-	<script type="text/javascript" src="{% static 'register.js' %}"></script>
-{% endblock %}
-

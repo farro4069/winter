@@ -6,22 +6,23 @@
 	<main>
 		<div class="picture__slider">
 			<div class="page__title">
-				<h1><span>6-7</span>July</h1>
+				<h1><span>26-27</span>July</h1>
 			</div>
 		</div>
 		<div class="hero__section">
 			<div class="hero__card">
-				<h1>Winter Warmer</h1>
+				<h1>2025 Winter Warmer</h1>
 				<h2 class="sub__head">Approx 250km and 4,000m elevation.</h2>
 				<p class='page__copy'>On Saturday, the ride goes up to Maleny staying overnight overlooking the beautiful vista of the Glass House Mountains at Tranquil Park Resort.</p>
 				<p>After a continental breakfast on Sunday morning the ride home takes you along some meandering country roads before approaching the city. </p>
 				<p> A limited number of rooms have been reserved so make sure you get in early.</p>
-				<p><a href="https://www.auscycling.org.au/membership" target="_blank">Membership with AusCycling or Bicycle Queensland is <strong>required</strong> for all riders participating on this ride. An Adult Lifestyle Membership of AusCycling is available from $13 per month.</a></p>
+				<p><a href="https://www.auscycling.org.au/membership" target="_blank">Membership with AusCycling or Bicycle Queensland is <strong>required</strong> for all riders participating on this ride. An Adult Lifestyle Membership of AusCycling is available from ${{ auscycling.amount|floatformat:'0g' }} per month.</a></p>
 			</div>
 			<div class="cta__card">
-				<h2>Make some new memories with Lifecycle Cycling Club and the Wombles for a legendary weekend of riding and good cheer. </h2>
-				<p><span>${{ price.amount|floatformat:'0g' }}</span></p>
-				<a href="{% url 'register' %}"><button>Sold Out</button></a>
+				<h2>Make some new memories with Lifecycle Cycling Club and the Wombles over a legendary weekend of riding and good cheer. </h2>
+				<p><span>${{ sharing.amount|floatformat:'0g' }}</span></p>
+
+				<a href="{% url 'register' %}"><button>Register now</button></a>
 			</div>
 		</div>
 		<div class="main__section">
@@ -29,13 +30,9 @@
 				<h2>What's included</h2>
 				<a href="{% url 'important' %}">
 					<ul>
-						<li>Baggage carriage.</li>
-						<li>Riding support.</li>
-						<li>Sag wagon.</li>
-						<li>Morning tea at Mt Mee.</li>
-						<li>Welcome platters on arrival.</li>
-						<li>Twin share accommodation.</li>
-						<li>Continental breakfast.</li>
+						{% for included in inclusions %}
+							<li>{{ included.item }}.</li>
+						{% endfor %}
 					</ul>
 					<p>Click here for <strong>important information</strong>.</p>
 				</a>

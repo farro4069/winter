@@ -1,11 +1,9 @@
-const imageList = ['P1060594.JPG', 'P1060596.JPG', 'P1060603.JPG', 
-	'P1060607.JPG', 'P1060609.JPG', 'P1060616.JPG', 'P1060617.JPG', 
-	'P1060624.JPG', 'P1060631.JPG', 'P1060640.JPG', 'P1060643.JPG', 
-	'P1060652.JPG', 'P1060661.JPG', 'P1060673.JPG', 'P1060676.JPG', 
-	'P1060677.JPG', 'P1060679.JPG', 'P1060680.JPG', 'P1060683.JPG', 
-	'P1060687.JPG', 'P1060699.JPG', 'P1060704.JPG', 'IMG_2A938F34D1CE-1.jpeg', 'IMG_7DB1492C659F-1.jpeg', 
-	'IMG_7B91457FCB9E-1.jpeg', 'IMG_183F1421DF22-1.jpeg', 'IMG_CE1F459DD930-1.jpeg', 
-	'return-break.jpg', 'return-descent.jpg', 'tranquil-view.jpg', 'woodford.jpg', 'carpark-depart.jpg', 'carpark-post.jpg', 'carpark-post2.jpg', 'samford.jpg', 'tranquil-buffet.jpg', 'mt-mee.jpg'];
+const imageList = [
+	'2024WW01.jpg', '2024WW02.jpg', '2024WW03.jpg', '2024WW04.jpg', '2024WW05.jpg',
+	'2024WW06.jpg', '2024WW07.jpg', '2024WW08.jpg', '2024WW09.jpg', '2024WW10.jpg',
+	'2024WW11.jpg', '2024WW12.jpg', '2024WW13.jpg', '2024WW14.jpg', '2024WW15.jpg',
+	'2024WW16.jpg', '2024WW17.jpg', '2024WW18.jpg', '2024WW19.jpg', '2024WW20.jpg', '2009View.jpg'
+];
 
 const slider = document.querySelector('.picture__slider');
 
