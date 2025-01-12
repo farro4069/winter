@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block main %}
+
+<main>
+	<h1>Got a question?</h1>
+	<p>The organisers are here to help. We all have busy schedules but they'll get back to you promptly.</p>
+
+	<div class='contact-form'>
+
+		<form action="." method="post">
+			{% csrf_token %}
+
+			{{ form.as_p }}
+
+
+
+
+			<input id="contact" type="submit" value="Submit" name="">
+		</form>
+
+	</div>
+</main>
+
+{% endblock %}
+
+{% block script %}
+	<script type="text/javascript" src="{% static 'contact.js' %}"></script>
+{% endblock %}

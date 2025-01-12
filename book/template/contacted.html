@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block main %}
+
+<main>
+	<h1>Thank you {{ name|truncatewords:1|title|cut:'…' }}</h1>
+	<p>The organisers have your question and will get back to you as soon as possible.</p>
+	<a href="{% url 'home' %}"><button type="submit">Return to home page</button></a>
+</main>
+
+{% endblock %}

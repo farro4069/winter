@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import View, UpdateView
 from .models import Membership, RoomType, Status, Registration, Price, Inclusion
-from .forms import RegistrationForm
+from .forms import RegistrationForm, ContactForm
 from django.core.mail import send_mail, EmailMultiAlternatives
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
@@ -63,7 +63,7 @@ class RegisterView(View):
 		else:
 			message = 'Please fix the errors'
 			details = request.POST
-			print(details)
+
 			context = {
 				'form': register,
 				'details': details,
@@ -86,6 +86,13 @@ def registrations(request):
 		'registrations': registrations,
 	}
 	return render(request, 'registrations.html', context)
+
+def registrations_room(request):
+	registrations = Registration.objects.all().order_by('name')
+	context = {
+		'registrations': registrations,
+	}
+	return render(request, 'registrations_room.html', context)
 
 def registration(request, pk):
 	registration = get_object_or_404(Registration, id = pk)
@@ -120,3 +127,63 @@ class RegistrationUpdateView(UpdateView):
 	template_name = "registration_update.html"
 	fields = ['name', 'email', 'membership', 'status', 'room', 'notes']
 	success_url = '../'
+
+class ContactView(View):
+	def get(self, request):
+
+		form = ContactForm()
+
+		context = {
+			'form': form,
+		}
+
+		return render(request, 'contact.html', context)
+
+	def post(self, request):
+		question = ContactForm(request.POST)
+
+		if question.is_valid():
+			
+			name = question.cleaned_data["name"]
+			email_from = question.cleaned_data["email"]
+			content = question.cleaned_data["content"]
+			subject = 'Winter Warmer Enquiry'
+
+			context = {
+				'name': name,
+				'email_from': email_from,
+				'subject': subject,
+				'content': content,
+			}
+
+			question_html = render_to_string('question.html', context)
+			question_plain = strip_tags(question_html)
+
+			msg = EmailMultiAlternatives(
+				subject,
+				question_plain,
+				email_from,
+				[settings.EMAIL_HOST_USER],
+				reply_to=[email_from,]
+			)
+
+			msg.attach_alternative(question_html, "text/html")
+			msg.send()
+
+			return render(request, 'contacted.html', context)
+
+		else:
+			message = 'Please fix the errors'
+			details = request.POST
+
+			context = {
+				'form': question,
+				'details': details,
+				'message': message,
+				}
+
+			return render(request, 'contact.html', context, )
+
+
+
+

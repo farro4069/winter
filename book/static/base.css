@@ -79,6 +79,10 @@ footer {
 	gap: 1rem;
 }
 
+p {
+	max-width: 50ch;
+}
+
 .footer__logo {
 	height: 40px;
 	aspect-ratio: 1/1;

@@ -5,40 +5,40 @@
 {% block main %}
 
 	<main>
-		<h1>Registrations by status</h1>
+		<h1>Registrations by room</h1>
 
 		<div class="registrations">
-			<h2>Riders</h2>
+			<h2>Solo</h2>
 			<div class="header"><p>Name</p><p>Mem</p><p>Room</p><p>Notes</p></div>
 			<ul>
 			{% for reg in registrations %}
-				{% if reg.status.id == 1 %}
-					<li><a href="{{ reg.id }}"><p>{{ reg.name }}</p><p>{{ reg.membership.code }}</p><p>{{ reg.room }}</p><p>{{ reg.notes }}</p></a></li>
+				{% if reg.room.id == 2 %}
+					<li><a href="{{ reg.id }}"><p>{{ reg.name|title }}</p><p>{{ reg.membership.code }}</p><p>{{ reg.room }}</p><p>{{ reg.notes }}</p></a></li>
 				{% endif %}
 			{% endfor %}
 			</ul>
-			<h2>Volunteers</h2>
+			<h2>Double</h2>
 			<div class="header"><p>Name</p><p>Mem</p><p>Room</p><p>Notes</p></div>
 			<ul>
 			{% for reg in registrations %}
-				{% if reg.status.id == 2 %}
-					<li><a href="{{ reg.id }}"><p>{{ reg.name }}</p><p>{{ reg.membership.code }}</p><p>{{ reg.room }}</p><p>{{ reg.notes }}</p></a></li>
+				{% if reg.room.id == 1 %}
+					<li><a href="{{ reg.id }}"><p>{{ reg.name|title }}</p><p>{{ reg.membership.code }}</p><p>{{ reg.room }}</p><p>{{ reg.notes }}</p></a></li>
 				{% endif %}
 			{% endfor %}
 			</ul>
-			<h2>Non-riders</h2>
+			<h2>Twin share</h2>
 			<div class="header"><p>Name</p><p>Mem</p><p>Room</p><p>Notes</p></div>
 			<ul>
 			{% for reg in registrations %}
-				{% if reg.status.id == 3 %}
-					<li><a href="{{ reg.id }}"><p>{{ reg.name }}</p><p>{{ reg.membership.code }}</p><p>{{ reg.room }}</p><p>{{ reg.notes }}</p></a></li>
+				{% if reg.room.id == 3 %}
+					<li><a href="{{ reg.id }}"><p>{{ reg.name|title }}</p><p>{{ reg.membership.code }}</p><p>{{ reg.room }}</p><p>{{ reg.notes }}</p></a></li>
 				{% endif %}
 			{% endfor %}
 			</ul>
 
 		</div>
-		<a href="{% url 'rooms' %}">
-			<button class="button_room">Rooms</button>
+		<a href="{% url 'registrations' %}">
+			<button class="button_room">Status</button>
 		</a>
 
 	</main>

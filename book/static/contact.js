@@ -1,4 +1,4 @@
-const button = document.getElementById('book');
+const button = document.getElementById('contact');
 
 button.addEventListener('click', (e) => 
 	{
