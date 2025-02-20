@@ -114,6 +114,7 @@ def important(request):
 	ride = get_object_or_404(Price, item='Ride only')
 
 	context = {
+		'solosupplement': solosupplement,
 		'inclusions': inclusions,
 		'ride': ride,
 	}
