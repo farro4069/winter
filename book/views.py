@@ -109,6 +109,7 @@ def detailedregistrations(request):
 	return render(request, 'detailedregistrations.html', context)
 
 def important(request):
+	solosupplement = get_object_or_404(Price, item='SoloSupplement')
 	inclusions = Inclusion.objects.filter(included = False)
 	ride = get_object_or_404(Price, item='Ride only')
 
