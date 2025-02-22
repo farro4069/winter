@@ -23,4 +23,7 @@ urlpatterns = [
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
+admin.site.index_title = "Winter Warmer"
+admin.site.site_header = "Winter Warmer Aministration"
+admin.site.site_title = "Amin"
 
