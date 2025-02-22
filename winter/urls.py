@@ -25,5 +25,5 @@ urlpatterns = [
 
 admin.site.index_title = "Winter Warmer"
 admin.site.site_header = "Winter Warmer Aministration"
-admin.site.site_title = "Amin"
+admin.site.site_title = "Admin"
 
